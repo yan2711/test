@@ -1,0 +1,28 @@
+<p-table
+  [value]="users"
+  [(selection)]="selectedUsers"
+  (selectionChange)="emitSelectedUsers()"
+  dataKey="email"
+  [tableStyle]="{ 'min-width': '50rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>E-mail</th>
+      <th>Телефон</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td>
+        <p-tableCheckbox [value]="user" />
+      </td>
+      <td (click)="emitEditUser(user)">{{ user.name }}</td>
+      <td>{{ user.surname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+    </tr>
+  </ng-template>
+</p-table>

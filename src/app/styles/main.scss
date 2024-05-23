@@ -1,0 +1,10 @@
+// Импорт Prime NG стилей
+@import "./primeng";
+// Измененные Prime NG элементы
+@import "./restyle/restyle";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,35 @@
+<p-dialog
+  header="Edit Profile"
+  [modal]="true"
+  [(visible)]="isVisible"
+  (onHide)="closeDialog()"
+  [draggable]="false"
+  [style]="{ width: '25rem' }"
+>
+  <form [formGroup]="form" (submit)="userData ? updateUser() : createUser()">
+    <div>
+      <label for="name">Name</label>
+      <input formControlName="name" pInputText id="name" />
+    </div>
+
+    <div>
+      <label for="surname">Surname</label>
+      <input formControlName="surname" pInputText id="surname" />
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input formControlName="email" pInputText id="email" />
+    </div>
+
+    <div>
+      <label for="phone">Phone</label>
+      <input formControlName="phone" pInputText id="phone" />
+    </div>
+
+    <div>
+      <p-button label="Cancel" severity="secondary" />
+      <p-button label="Save" [disabled]="form.invalid" type="submit" />
+    </div>
+  </form>
+</p-dialog>
